@@ -1,8 +1,9 @@
 <h1>Tasks</h1>
 
 <% @tasks.each do |task| %>
-  <li> <%= link_to task.title, task_path(task.id)%></li>
+  <li>
+    <%= link_to task.title, task_path(task.id)%>
+    <%= link_to '🗑', delete_path(task.id), data: { turbo_method: :destroy } %>
+  </li>
 <% end %>
-<div>
-<%= link_to 'Add a task', tasks_new_path()  %>
-</div>
+<p><%= link_to 'Add a task', tasks_new_path() %></p>

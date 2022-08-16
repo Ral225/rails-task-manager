@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,4 +16,6 @@ Rails.application.routes.draw do
   get 'tasks/:id/edit', to: 'tasks#edit', as: 'edit'
   patch 'tasks/:id', to: 'tasks#update'
   #Delete
+
+  delete 'tasks/:id', to: 'tasks#destroy', as: 'delete'
 end

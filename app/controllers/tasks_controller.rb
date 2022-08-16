@@ -34,10 +34,15 @@ class TasksController < ApplicationController
     end
   end
 
-private
+  def destroy
+    @tasks = Task.find(params[:id])
+    if @tasks.destroy
+      redirect_to tasks_path
+    end
+  end
 
+private
   def task_params
     params.require(:task).permit(:title, :details)
   end
-
 end
