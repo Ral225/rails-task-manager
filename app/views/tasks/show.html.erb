@@ -1,0 +1,7 @@
+<h1><%=@tasks.title %></h1>
+
+<p><%= @tasks.details %></p>
+<p><%= "Completed: #{@tasks.completed} " %></p>
+
+<a href="/tasks"> Back to list</a>
+<%= link_to 'Back to list', tasks_path()  %>
